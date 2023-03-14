@@ -1,0 +1,53 @@
+TEST APPROACH
+
+GENERAL APPROACH
+1. Test manually UI first
+2. Test manually the functionalities
+3. Automate passing test cases
+4. Automate failing test cases but use expected values
+
+* If defect is found in steps 1 and 2. Log the defect and inform the dev and the team.
+** If the the bug is fixed , apply necessary changes in test automation.
+
+MANUAL TESTING - UI VALIDATION
+1. Verify that controls have proper labels and captions. Check for missing or misspelling.
+2. Verify that controls and images are active/visible. Can type, can be clicked, etc
+3. Verify if all links works. User is redirected to the correct page.
+4. Verify that controls are visible and active when browser size is changed. Change browser size and view manually the controls.
+Coverage:
+-All pages
+
+MANUAL TESTING - NEGATIVE TEST
+1. Check error message for invalid inputs
+2. Check behavior or response when unusual steps are made
+Coverage:
+-Missing and invalid login credentials
+-Missing and invalid field values in registration page
+-Invalid profile update
+
+MANUAL TESTING - FUNCTIONALITY
+1. Validate that each controls works properly
+2. Validate that proper message are display for successful operation
+3. Verify that user is redirected to correct page and/or expected controls are visible after successful operation
+4. If connected to Database, validate that correct values are retrieved and displayed in the from end. Also check if records are stored in the database properly.
+Coverage:
+-Successful login
+-Successful registration
+-successful profile update
+-Successful commenting
+-Navigation on Car Rating Page
+
+TEST AUTOMATION APPROACH
+-Automate UI Validate
+-Automate Negative and Positive Test
+-Automate links and image validtion (If possible)
+
+Programming Language = Java
+Tools/Dependencies
+-Maven
+-Selenium
+-Cucumber
+-JUnit
+
+Report
+-Cucumber build-it report (Upgrade to Serenity if possible)
