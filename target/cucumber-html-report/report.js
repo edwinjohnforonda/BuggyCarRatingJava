@@ -1,60 +1,64 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/buggycarsrating.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/headerMenuBar.feature");
 formatter.feature({
   "line": 1,
-  "name": "Bank Account Transactions",
+  "name": "Test involving header menu bar",
   "description": "",
-  "id": "bank-account-transactions",
+  "id": "test-involving-header-menu-bar",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 4,
+  "line": 53,
   "name": "Successful logging in",
   "description": "",
-  "id": "bank-account-transactions;successful-logging-in",
+  "id": "test-involving-header-menu-bar;successful-logging-in",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 3,
-      "name": "@login"
+      "line": 52,
+      "name": "@all"
+    },
+    {
+      "line": 52,
+      "name": "@failedlLogin"
     }
   ]
 });
 formatter.step({
-  "line": 5,
+  "line": 54,
   "name": "I open browser",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 6,
+  "line": 55,
   "name": "I navigate to \"home\" page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 7,
-  "name": "I enter username as \"EJFTester01\" and password as \"Tester01.\"",
+  "line": 56,
+  "name": "I enter username as \"Invalid\" and password as \"Invalid\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 8,
+  "line": 57,
   "name": "I click on login button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 9,
-  "name": "I should be in \"home\" page",
-  "keyword": "Then "
+  "line": 58,
+  "name": "\"login error message\" has \"Text\" value equal to \"Invalid username/password\"",
+  "keyword": "And "
 });
 formatter.step({
-  "line": 10,
+  "line": 59,
   "name": "I close browser",
   "keyword": "And "
 });
 formatter.match({
-  "location": "HomePageSteps.iOpenBrowser()"
+  "location": "HeaderMenuBarSteps.iOpenBrowser()"
 });
 formatter.result({
-  "duration": 2286912600,
+  "duration": 2498671200,
   "status": "passed"
 });
 formatter.match({
@@ -64,54 +68,62 @@ formatter.match({
       "offset": 15
     }
   ],
-  "location": "HomePageSteps.iNavigateToPage(String)"
+  "location": "HeaderMenuBarSteps.iNavigateToPage(String)"
 });
 formatter.result({
-  "duration": 503465900,
+  "duration": 421897500,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "EJFTester01",
+      "val": "Invalid",
       "offset": 21
     },
     {
-      "val": "Tester01.",
-      "offset": 51
+      "val": "Invalid",
+      "offset": 47
     }
   ],
-  "location": "HomePageSteps.iEnterUsernameAsAndPasswordAs(String,String)"
+  "location": "HeaderMenuBarSteps.iEnterUsernameAsAndPasswordAs(String,String)"
 });
 formatter.result({
-  "duration": 239958900,
+  "duration": 233574500,
   "status": "passed"
 });
 formatter.match({
-  "location": "HomePageSteps.iClickOnLoginButton()"
+  "location": "HeaderMenuBarSteps.iClickOnLoginButton()"
 });
 formatter.result({
-  "duration": 95948300,
+  "duration": 119146200,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "home",
-      "offset": 16
+      "val": "login error message",
+      "offset": 1
+    },
+    {
+      "val": "Text",
+      "offset": 27
+    },
+    {
+      "val": "Invalid username/password",
+      "offset": 49
     }
   ],
-  "location": "HomePageSteps.pageShouldBe(String)"
+  "location": "HeaderMenuBarSteps.webElementHasPropertyValueEqualTo(String,String,String)"
 });
 formatter.result({
-  "duration": 48724100,
+  "duration": 632791100,
   "status": "passed"
 });
 formatter.match({
-  "location": "HomePageSteps.quitDriver()"
+  "location": "HeaderMenuBarSteps.quitDriver()"
 });
 formatter.result({
-  "duration": 654892400,
+  "duration": 649799600,
   "status": "passed"
 });
 });
