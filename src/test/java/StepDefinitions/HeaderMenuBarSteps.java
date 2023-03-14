@@ -3,8 +3,6 @@ package StepDefinitions;
 import com.ejf.CommonMethods.CommonMethods;
 import com.ejf.PageObjectModel.DriverInitializer;
 import com.ejf.PageObjectModel.HeaderMenuBar;
-import com.ejf.PageObjectModel.HomePage;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -23,7 +21,7 @@ import static org.assertj.core.api.Assertions.fail;
 
 public class HeaderMenuBarSteps {
 
-    WebDriver driver = null;
+    public static WebDriver driver = null;
     CommonMethods cm = new CommonMethods();
     HeaderMenuBar hmb = new HeaderMenuBar();
 
@@ -49,6 +47,11 @@ public class HeaderMenuBarSteps {
     @When("^I click on login button$")
     public void iClickOnLoginButton() throws Throwable {
         hmb.clickLogin(driver);
+    }
+
+    @When("^I click on Register button$")
+    public void iClickOnRegisterButton() throws Throwable {
+        hmb.clickRegister(driver);
     }
 
     //Method combining step of going to login page then logging in successfully

@@ -1,6 +1,7 @@
 package com.ejf.CommonMethods;
 import com.ejf.PageObjectModel.DriverInitializer;
 import com.ejf.PageObjectModel.HeaderMenuBar;
+import com.ejf.PageObjectModel.RegisterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,6 +10,7 @@ import static org.assertj.core.api.Assertions.fail;
 public class CommonMethods {
 
     HeaderMenuBar hmb = new HeaderMenuBar();
+    RegisterPage rp = new RegisterPage();
 
     public String getPageUrl(String page)
     {
@@ -82,7 +84,42 @@ public class CommonMethods {
             case "login error message":
                 byElement = hmb.lblErrorMessage1;
                 break;
-
+            case "username label":
+                byElement = rp.lblUsername;
+                break;
+            case "username textbox":
+                byElement = rp.txtUsername;
+                break;
+            case "firstname label":
+                byElement = rp.lblFirstName;
+                break;
+            case "firstname textbox":
+                byElement = rp.txtFirstName;
+                break;
+            case "lastname label":
+                byElement = rp.lblLastName;
+                break;
+            case "lastname textbox":
+                byElement = rp.txtLastName;
+                break;
+            case "password label":
+                byElement = rp.lblPassword;
+                break;
+            case "register password textbox":
+                byElement = rp.txtPassword;
+                break;
+            case "confirm password label":
+                byElement = rp.lblConfirmPassword;
+                break;
+            case "register confirm password textbox":
+                byElement = rp.txtConfirmPassword;
+                break;
+            case "submit registration button":
+                byElement = rp.btnRegister;
+                break;
+            case "cancel registration button":
+                byElement = rp.btnCancel;
+                break;
             default:
                 fail("No element defined");
         }
