@@ -1,56 +1,91 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/headerMenuBar.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("features/registerPage.feature");
 formatter.feature({
   "line": 1,
-  "name": "Test involving header menu bar",
+  "name": "Test involving register page",
   "description": "",
-  "id": "test-involving-header-menu-bar",
+  "id": "test-involving-register-page",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 53,
-  "name": "Successful logging in",
+  "line": 57,
+  "name": "Verify registration of exsiting user",
   "description": "",
-  "id": "test-involving-header-menu-bar;successful-logging-in",
+  "id": "test-involving-register-page;verify-registration-of-exsiting-user",
   "type": "scenario",
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 52,
+      "line": 56,
       "name": "@all"
     },
     {
-      "line": 52,
-      "name": "@failedlLogin"
+      "line": 56,
+      "name": "@Register"
+    },
+    {
+      "line": 56,
+      "name": "@Register3"
     }
   ]
 });
 formatter.step({
-  "line": 54,
+  "line": 58,
   "name": "I open browser",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 55,
+  "line": 59,
   "name": "I navigate to \"home\" page",
   "keyword": "When "
 });
 formatter.step({
-  "line": 56,
-  "name": "I enter username as \"Invalid\" and password as \"Invalid\"",
+  "line": 60,
+  "name": "I click on Register button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 57,
-  "name": "I click on login button",
+  "line": 61,
+  "name": "in \"Username Textbox\" I enter \"EJFTEST001\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 58,
-  "name": "\"login error message\" has \"Text\" value equal to \"Invalid username/password\"",
+  "line": 62,
+  "name": "in \"FirstName Textbox\" I enter \"John\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 59,
+  "line": 63,
+  "name": "in \"LastName Textbox\" I enter \"Doe\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 64,
+  "name": "in \"Register Password Textbox\" I enter \"Test.123\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 65,
+  "name": "in \"Register Confirm Password Textbox\" I enter \"Test.123\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 66,
+  "name": "I click on Complete Register button",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 67,
+  "name": "verify that error message \"UsernameExistsException: User already exists\"",
+  "keyword": "And "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 68,
+      "value": "#    Then I apply wait \"5000\" of milliseconds"
+    }
+  ],
+  "line": 69,
   "name": "I close browser",
   "keyword": "And "
 });
@@ -58,7 +93,7 @@ formatter.match({
   "location": "HeaderMenuBarSteps.iOpenBrowser()"
 });
 formatter.result({
-  "duration": 2498671200,
+  "duration": 2451312900,
   "status": "passed"
 });
 formatter.match({
@@ -71,59 +106,126 @@ formatter.match({
   "location": "HeaderMenuBarSteps.iNavigateToPage(String)"
 });
 formatter.result({
-  "duration": 421897500,
+  "duration": 461504400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "HeaderMenuBarSteps.iClickOnRegisterButton()"
+});
+formatter.result({
+  "duration": 179247200,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Invalid",
-      "offset": 21
+      "val": "Username Textbox",
+      "offset": 4
     },
     {
-      "val": "Invalid",
-      "offset": 47
+      "val": "EJFTEST001",
+      "offset": 31
     }
   ],
-  "location": "HeaderMenuBarSteps.iEnterUsernameAsAndPasswordAs(String,String)"
+  "location": "RegisterPageSteps.inElementIEnterValue(String,String)"
 });
 formatter.result({
-  "duration": 233574500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "HeaderMenuBarSteps.iClickOnLoginButton()"
-});
-formatter.result({
-  "duration": 119146200,
+  "duration": 175878200,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "login error message",
-      "offset": 1
+      "val": "FirstName Textbox",
+      "offset": 4
     },
     {
-      "val": "Text",
+      "val": "John",
+      "offset": 32
+    }
+  ],
+  "location": "RegisterPageSteps.inElementIEnterValue(String,String)"
+});
+formatter.result({
+  "duration": 122011300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "LastName Textbox",
+      "offset": 4
+    },
+    {
+      "val": "Doe",
+      "offset": 31
+    }
+  ],
+  "location": "RegisterPageSteps.inElementIEnterValue(String,String)"
+});
+formatter.result({
+  "duration": 90014800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Register Password Textbox",
+      "offset": 4
+    },
+    {
+      "val": "Test.123",
+      "offset": 40
+    }
+  ],
+  "location": "RegisterPageSteps.inElementIEnterValue(String,String)"
+});
+formatter.result({
+  "duration": 95450800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Register Confirm Password Textbox",
+      "offset": 4
+    },
+    {
+      "val": "Test.123",
+      "offset": 48
+    }
+  ],
+  "location": "RegisterPageSteps.inElementIEnterValue(String,String)"
+});
+formatter.result({
+  "duration": 92037300,
+  "status": "passed"
+});
+formatter.match({
+  "location": "RegisterPageSteps.iClickOnRegisterButton()"
+});
+formatter.result({
+  "duration": 100499800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "UsernameExistsException: User already exists",
       "offset": 27
-    },
-    {
-      "val": "Invalid username/password",
-      "offset": 49
     }
   ],
-  "location": "HeaderMenuBarSteps.webElementHasPropertyValueEqualTo(String,String,String)"
+  "location": "RegisterPageSteps.verifyRegistrationErrorMessage(String)"
 });
 formatter.result({
-  "duration": 632791100,
+  "duration": 595589700,
   "status": "passed"
 });
 formatter.match({
   "location": "HeaderMenuBarSteps.quitDriver()"
 });
 formatter.result({
-  "duration": 649799600,
+  "duration": 655184800,
   "status": "passed"
 });
 });

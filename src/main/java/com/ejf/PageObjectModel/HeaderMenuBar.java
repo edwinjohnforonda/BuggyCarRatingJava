@@ -50,4 +50,14 @@ public class HeaderMenuBar {
         return driver;
     }
 
+    public WebDriver clickRegister(WebDriver driver)
+    {
+        //Fluent wait for the element to be clickable
+        WebElement dynamicElement = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(btnRegister));
+
+        dynamicElement.click();
+        return driver;
+    }
+
 }
