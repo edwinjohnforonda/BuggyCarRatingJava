@@ -14,7 +14,7 @@ public class HeaderMenuBar {
     public By btnLogin = By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/button");
     public By btnRegister = By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/a");
     public By lblWelcome = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[1]/span");
-    public By lnkProfile = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[2]/a");
+    public By lnkProfile = By.xpath("//a[@href='/profile']");
     public By lnkLogout = By.xpath("/html/body/my-app/header/nav/div/my-login/div/ul/li[3]/a");
     public By lblErrorMessage1 = By.xpath("/html/body/my-app/header/nav/div/my-login/div/form/div/span");
 
@@ -60,4 +60,15 @@ public class HeaderMenuBar {
         return driver;
     }
 
+
+
+    public WebDriver clickProfile(WebDriver driver)
+    {
+        //Fluent wait for the element to be clickable
+        WebElement dynamicElement = (new WebDriverWait(driver, 10))
+                .until(ExpectedConditions.elementToBeClickable(lnkProfile));
+
+        dynamicElement.click();
+        return driver;
+    }
 }

@@ -4,6 +4,9 @@ import com.ejf.PageObjectModel.HeaderMenuBar;
 import com.ejf.PageObjectModel.RegisterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.assertj.core.api.Assertions.fail;
 
@@ -27,10 +30,13 @@ public class CommonMethods {
                 checkUrl = DriverInitializer.getProperty( "make.url");
                 break;
             case "model":
-                checkUrl = DriverInitializer.getProperty( "make.url");
+                checkUrl = DriverInitializer.getProperty( "model.url");
                 break;
             case "rating":
-                checkUrl = DriverInitializer.getProperty( "make.url");
+                checkUrl = DriverInitializer.getProperty( "rating.url");
+                break;
+            case "profile":
+                checkUrl = DriverInitializer.getProperty( "profile.url");
                 break;
         }
 
@@ -126,5 +132,26 @@ public class CommonMethods {
 
         return byElement;
     }
+
+
+    public String getElementTextValue(WebDriver driver, String webElement){
+        String value = "";
+
+        By byElement = getByWebElement(webElement);
+        value = driver.findElement(byElement).getAttribute("Value");
+
+        return value;
+    }
+
+    public WebDriver waitElementToBeVisible (WebDriver driver, String webElement, int sec) {
+
+        By byElement = getByWebElement(webElement);
+        //Fluent wait for the element to be located
+        WebElement dynamicElement = (new WebDriverWait(driver, sec))
+                .until(ExpectedConditions.presenceOfElementLocated(byElement));
+
+        return driver;
+    }
+
 
 }

@@ -38,24 +38,6 @@ public class RegisterPage {
         return driver;
     }
 
-    public WebDriver clickElement(WebDriver driver, String webElement, String value)
-    {
-        if (webElement.equalsIgnoreCase("register button")){
-            webElement = "submit register button";
-        }
-        else if (webElement.equalsIgnoreCase("cancel button")){
-            webElement = "cancel register button";
-        }
-
-//        By byElement = cm.getByWebElement(webElement);
-//
-//        //Fluent wait for the element to be located
-//        WebElement dynamicElement = (new WebDriverWait(driver, 10))
-//                .until(ExpectedConditions.elementToBeClickable(byElement));
-//        dynamicElement.click();
-
-        return driver;
-    }
 
     public WebDriver clickCompletteRegister(WebDriver driver)
     {
