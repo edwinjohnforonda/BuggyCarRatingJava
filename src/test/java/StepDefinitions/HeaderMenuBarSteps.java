@@ -54,6 +54,11 @@ public class HeaderMenuBarSteps {
         hmb.clickRegister(driver);
     }
 
+    @When("^I click on Profile button$")
+    public void iClickOnProfileButton() throws Throwable {
+        hmb.clickProfile(driver);
+    }
+
     //Method combining step of going to login page then logging in successfully
     @When("^I login as \"([^\"]*)\" and password as \"([^\"]*)\"$")
     public void iLoginAs(String email, String password) throws Throwable {

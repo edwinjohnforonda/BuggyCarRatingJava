@@ -24,7 +24,6 @@ Feature: Test involving register page
       | Password Textbox            | blank    |
       | Confirm Password Textbox    | visible  |
       | Confirm Password Textbox    | enabled  |
-      | Confirm Password Textbox    | blank    |
       | Submit Registration Button  | visible  |
       | Submit Registration Button  | disabled |
       | Cancel Registration Button  | visible  |

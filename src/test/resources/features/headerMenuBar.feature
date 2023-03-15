@@ -45,7 +45,7 @@ Feature: Test involving header menu bar
 
     Examples:
       | WebElement       | PropertyCheck | PropertyValue   |
-      | Welcome Label    | Text          | Hi, test        |
+      | Welcome Label    | Text          | Hi, John        |
       | Profile link     | Text          | Profile         |
       | Logout link      | Text           | Logout         |
 
