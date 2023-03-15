@@ -114,7 +114,7 @@ public class CommonMethods {
             case "register password textbox":
                 byElement = rp.txtPassword;
                 break;
-            case "confirm password label":
+            case "confirm password textbox":
                 byElement = rp.lblConfirmPassword;
                 break;
             case "register confirm password textbox":
